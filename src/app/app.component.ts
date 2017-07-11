@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MdDialog } from "@angular/material";
+import { LoginModule } from "./login/login.module";
+import { LoginDialogComponent } from './login/login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(private loginDialog: MdDialog) { }
+
+  showLogin() {
+    this.loginDialog.open(LoginDialogComponent);
+  }
 }
